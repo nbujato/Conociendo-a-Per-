@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- idioma corregido a español -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conociendo Perú</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado principal -->
+    <header class="header" role="banner">
+        <div class="menu container">
+            <a href="#" class="logo" aria-label="Logo de Conociendo Perú">
+                <img src="LOGO LLAMA.png" alt="Logo de Conociendo Perú" class="logo-img">
+            </a>
+
+            <h1 class="titulo">Conociendo a Perú</h1>
+
+            <nav class="navbar" role="navigation" aria-label="Menú principal">
+                <ul>
+                    <li><a href="#">Tradición</a></li>
+                    <li><a href="#">Gastronomía</a></li>
+                    <li><a href="#">Lugares emblemáticos</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-container">
+            <div class="header-text"> 
+                <h2>Perú</h2>
+                <p> 
+                    Perú es un destino que deslumbra con su riqueza cultural, histórica y natural. 
+                    Desde la imponente ciudadela de Machu Picchu hasta las misteriosas Líneas de Nazca, 
+                    cada rincón guarda un legado único.
+                </p>
+                <a href="#" class="btn-1" aria-label="Conocer más sobre Perú">Conocer más</a>
+            </div>
+
+            <div class="header-img">
+                <img src="PORTADA-FOTO-1.jpg" alt="Vista panorámica de Machu Picchu y montañas peruanas">
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+      <section class="carousel" aria-label="Galería de aspectos culturales de Perú">
+        <article class="carousel-item">
+          <img src="ceviche.jpg" alt="Plato de ceviche peruano">
+          <div class="carousel-text">
+            <h2>Gastronomía</h2>
+            <p>El ceviche peruano, fresco y lleno de sabor,
+              es uno de los platos más representativos de Perú.</p>
+          </div>
+        </article>
+
+        <article class="carousel-item">
+          <img src="Lugar emblematico.jpg" alt="Vista de Machu Picchu, uno de los lugares emblemáticos de Perú">
+          <div class="carousel-text">
+            <h2>Lugares emblemáticos</h2>
+            <p>Desde Machu Picchu hasta las Líneas de Nazca, 
+              Perú guarda tesoros únicos en cada rincón.</p>
+          </div>
+        </article>
+
+        <article class="carousel-item">
+          <img src="Tradicion.jpg" alt="Danza típica peruana en una festividad tradicional">
+          <div class="carousel-text">
+            <h2>Tradición</h2>
+            <p>Las festividades y costumbres peruanas reflejan 
+              la riqueza cultural y la diversidad del país.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Botones del carrusel accesibles -->
+      <button class="carousel-btn prev" aria-label="Elemento anterior del carrusel">&#10094;</button>
+      <button class="carousel-btn next" aria-label="Elemento siguiente del carrusel">&#10095;</button>
+
+      <!-- Sección de video -->
+      <section class="video-section" aria-label="Video sobre la cultura peruana">
+        <div class="video-container">
+          <video autoplay muted loop playsinline aria-label="Video turístico de Perú">
+            <source src="video perú.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+          </video>
+          <div class="video-overlay">
+            <h2>Explora Perú</h2>
+            <p>Un recorrido por su cultura, paisajes y tradiciones únicas.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer role="contentinfo">
+      <p>&copy; 2025 Conociendo Perú. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
