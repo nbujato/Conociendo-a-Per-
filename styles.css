@@ -9,7 +9,25 @@ body {
   line-height: 1.6;
   color: #333;
 }
+ 
 
+        /* ================= BOTÓN FLOTANTE CAMBIO DE IDIOMA ================= */
+        .btn-idioma {
+            position: fixed;
+            top: 50px;
+            right: 600px;
+            background: #ffffff;
+            color:#a4161a ;
+            border: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            z-index: 4000;
+            transition: 0.3s ease;
+        }
 
 /* ================= MENÚ ================= */
 .menu {
@@ -20,34 +38,34 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 30px 50px;
   z-index: 1000;
 }
 
 .menu .logo-img {
-  height: 80px;   
+  height: 90px;   
   width: auto;       
   object-fit: contain; 
 }
 
 
 .titulo {
-  font-size: 30px;       
+  font-size: 50px;       
   color: white;          
   font-weight: bold;      
   margin:0;             
-  padding-left: 90px;
+  padding-left: 1px;
   text-align: left;
 }
 
 .menu img {
-  height: 30px;
+  height: 50px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 50px;
 }
 
 .navbar a {
@@ -248,13 +266,13 @@ section.carousel {
 
 .carousel-btn.prev {
   transform: translateY(-550%);
-  left: 250px;
+  left: 550px;
 }
 
 
 .carousel-btn.next {
   transform: translateY(-550%);
-  right: 250px;
+  right: 550px;
 }
 
 /* ================= VIDEO ================= */
@@ -510,4 +528,372 @@ footer p {
   padding: 12px 25px;          /* espacio interno */
   border-radius: 8px;          /* bordes suaves */
   font-weight: 500;
+}
+
+{
+  .btn-idioma {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #a4161a;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 2000;
+  transition: 0.3s ease;
+}
+
+.btn-idioma:hover {
+  background: #7d0909;
+}
+
+.btn-idioma:focus {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   RESPONSIVE (media queries)
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .header-text {
+    padding: 150px 40px;
+    font-size: 16px;
+  }
+
+  .titulo {
+    font-size: 24px;
+    padding-left: 50px;
+  }
+
+  .navbar ul {
+    gap: 10px;
+  }
+
+  .carousel-item {
+    flex: 0 0 45%;
+    height: 360px;
+  }
+
+  .video-overlay h2 {
+    font-size: 2rem;
+  }
+}
+
+
+/* ======== VERSIÓN MÓVIL ======== */
+@media (max-width: 768px) {
+
+  /* --- Encabezado --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 20px;
+  }
+
+  header img {
+    width: 45px;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #fff;
+  }
+
+  /* --- Menú hamburguesa --- */
+  nav {
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #7d0909; /* rojo oscuro */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 180px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  /* --- Imagen principal --- */
+  .hero {
+    position: relative;
+    text-align: left;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
+  .hero .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #7d0909;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .menu {
+    padding: 10px 20px;
+  }
+
+  .titulo {
+    font-size: 20px;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-text {
+    padding: 120px 20px;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .carousel-item {
+    width: 90%;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .video-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .video-overlay p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   PIE DE PÁGINA CON CUADRO ROJO
+   ========================================================= */
+footer {
+  background-color: #a4161a;   /* color rojo principal */
+  color: #fff;                 /* texto blanco */
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 1rem;
+  border-top: 5px solid #a4161a; /* borde superior más oscuro para contraste */
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.15); /* sutil sombra arriba */
+}
+
+footer p {
+  background-color: #a4161a; /* fondo rojo uniforme dentro del recuadro */
+  display: inline-block;
+  padding: 12px 25px;          /* espacio interno */
+  border-radius: 8px;          /* bordes suaves */
+  font-weight: 500;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE (media queries)
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .header-text {
+    padding: 150px 40px;
+    font-size: 16px;
+  }
+
+  .titulo {
+    font-size: 24px;
+    padding-left: 50px;
+  }
+
+  .navbar ul {
+    gap: 10px;
+  }
+
+  .carousel-item {
+    flex: 0 0 45%;
+    height: 360px;
+  }
+
+  .video-overlay h2 {
+    font-size: 2rem;
+  }
+}
+
+
+/* ======== VERSIÓN MÓVIL ======== */
+@media (max-width: 768px) {
+
+  /* --- Encabezado --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 20px;
+  }
+
+  header img {
+    width: 45px;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #fff;
+  }
+
+  /* --- Menú hamburguesa --- */
+  nav {
+    position: relative;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 1.8em;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #7d0909; /* rojo oscuro */
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 180px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: right;
+  }
+
+  /* --- Imagen principal --- */
+  .hero {
+    position: relative;
+    text-align: left;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
+  .hero .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #7d0909;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .menu {
+    padding: 10px 20px;
+  }
+
+  .titulo {
+    font-size: 20px;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-text {
+    padding: 120px 20px;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .carousel {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .carousel-item {
+    width: 90%;
+    height: 280px;
+    margin: 0 auto;
+  }
+
+  .video-overlay h2 {
+    font-size: 1.8rem;
+  }
+
+  .video-overlay p {
+    font-size: 1rem;
+  }
 }
