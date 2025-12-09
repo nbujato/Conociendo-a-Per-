@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="es"> <!-- idioma corregido a español -->
+<html lang="es"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conociendo Perú</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="styles.css"> 
+    </head>
 <body>
+    <button id="btn-idioma"
+        class="btn-idioma"
+        aria-label="Cambiar idioma">
+        EN
+    </button>
 
-    <!-- Encabezado principal -->
-    <header class="header" role="banner">
+    <header class="header">
         <div class="menu container">
             <a href="#" class="logo" aria-label="Logo de Conociendo Perú">
                 <img src="LOGO LLAMA.png" alt="Logo de Conociendo Perú" class="logo-img">
@@ -17,24 +21,29 @@
 
             <h1 class="titulo">Conociendo a Perú</h1>
 
-            <nav class="navbar" role="navigation" aria-label="Menú principal">
+            <nav class="navbar" aria-label="Menú principal">
                 <ul>
-                    <li><a href="#">Tradición</a></li>
-                    <li><a href="#">Gastronomía</a></li>
-                    <li><a href="#">Lugares emblemáticos</a></li>
+                    <li class="menu-item-parent">
+                        <a href="#" class="nav-tradicion">Tradición</a>
+                    </li>
+                    <li><a href="#" class="nav-gastronomia">Gastronomía</a></li>
+                    <li><a href="#" class="nav-lugares">Lugares emblemáticos</a></li>
                 </ul>
             </nav>
         </div>
 
         <div class="header-container">
             <div class="header-text"> 
-                <h2>Perú</h2>
-                <p> 
+                
+                <p class="welcome-message"></p> 
+                
+                <h2 class="header-title">Perú</h2> 
+                <p class="header-desc"> 
                     Perú es un destino que deslumbra con su riqueza cultural, histórica y natural. 
                     Desde la imponente ciudadela de Machu Picchu hasta las misteriosas Líneas de Nazca, 
                     cada rincón guarda un legado único.
                 </p>
-                <a href="#" class="btn-1" aria-label="Conocer más sobre Perú">Conocer más</a>
+                <a href="#" class="btn-1 header-btn" aria-label="Conocer más sobre Perú">Conocer más</a>
             </div>
 
             <div class="header-img">
@@ -43,15 +52,14 @@
         </div>
     </header>
 
-    <!-- Contenido principal -->
     <main>
 
       <section class="carousel" aria-label="Galería de aspectos culturales de Perú">
         <article class="carousel-item">
           <img src="ceviche.jpg" alt="Plato de ceviche peruano">
           <div class="carousel-text">
-            <h2>Gastronomía</h2>
-            <p>El ceviche peruano, fresco y lleno de sabor,
+            <h2 class="c1-title">Gastronomía</h2>
+            <p class="c1-text">El ceviche peruano, fresco y lleno de sabor,
               es uno de los platos más representativos de Perú.</p>
           </div>
         </article>
@@ -59,8 +67,8 @@
         <article class="carousel-item">
           <img src="Lugar emblematico.jpg" alt="Vista de Machu Picchu, uno de los lugares emblemáticos de Perú">
           <div class="carousel-text">
-            <h2>Lugares emblemáticos</h2>
-            <p>Desde Machu Picchu hasta las Líneas de Nazca, 
+            <h2 class="c2-title">Lugares emblemáticos</h2>
+            <p class="c2-text">Desde Machu Picchu hasta las Líneas de Nazca, 
               Perú guarda tesoros únicos en cada rincón.</p>
           </div>
         </article>
@@ -68,18 +76,16 @@
         <article class="carousel-item">
           <img src="Tradicion.jpg" alt="Danza típica peruana en una festividad tradicional">
           <div class="carousel-text">
-            <h2>Tradición</h2>
-            <p>Las festividades y costumbres peruanas reflejan 
+            <h2 class="c3-title">Tradición</h2>
+            <p class="c3-text">Las festividades y costumbres peruanas reflejan 
               la riqueza cultural y la diversidad del país.</p>
           </div>
         </article>
       </section>
 
-      <!-- Botones del carrusel accesibles -->
       <button class="carousel-btn prev" aria-label="Elemento anterior del carrusel">&#10094;</button>
       <button class="carousel-btn next" aria-label="Elemento siguiente del carrusel">&#10095;</button>
 
-      <!-- Sección de video -->
       <section class="video-section" aria-label="Video sobre la cultura peruana">
         <div class="video-container">
           <video autoplay muted loop playsinline aria-label="Video turístico de Perú">
@@ -87,18 +93,211 @@
             Tu navegador no soporta video HTML5.
           </video>
           <div class="video-overlay">
-            <h2>Explora Perú</h2>
-            <p>Un recorrido por su cultura, paisajes y tradiciones únicas.</p>
+            <h2 class="video-title">Explora Perú</h2>
+            <p class="video-text">Un recorrido por su cultura, paisajes y tradiciones únicas.</p>
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- Pie de página -->
-    <footer role="contentinfo">
+    <footer>
       <p>&copy; 2025 Conociendo Perú. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // --- 1. LÓGICA DE CAMBIO DE IDIOMA Y SALUDO DINÁMICO ---
+
+        const btnIdioma = document.getElementById("btn-idioma");
+
+        const textos = {
+            es: {
+                titulo: "Conociendo a Perú", navTrad: "Tradición", navGast: "Gastronomía", navLug: "Lugares emblemáticos",
+                headerTitle: "Perú",
+                headerDesc: "Perú es un destino que deslumbra con su riqueza cultural, histórica y natural. Desde la imponente ciudadela de Machu Picchu hasta las misteriosas Líneas de Nazca, cada rincón guarda un legado único.",
+                headerBtn: "Conocer más",
+                c1Title: "Gastronomía", c1Text: "El ceviche peruano, fresco y lleno de sabor, es uno de los platos más representativos de Perú.",
+                c2Title: "Lugares emblemáticos", c2Text: "Desde Machu Picchu hasta las Líneas de Nazca, Perú guarda tesoros únicos en cada rincón.",
+                c3Title: "Tradición", c3Text: "Las festividades y costumbres peruanas reflejan la riqueza cultural y la diversidad del país.",
+                videoTitle: "Explora Perú", videoText: "Un recorrido por su cultura, paisajes y tradiciones únicas.",
+            },
+            en: {
+                titulo: "Discover Peru", navTrad: "Tradition", navGast: "Gastronomy", navLug: "Landmarks",
+                headerTitle: "Peru",
+                headerDesc: "Peru is a destination that dazzles with its cultural, historical, and natural richness. From the majestic Machu Picchu to the mysterious Nazca Lines, every corner holds a unique legacy.",
+                headerBtn: "Learn more",
+                c1Title: "Gastronomy", c1Text: "Peruvian ceviche, fresh and full of flavor, is one of the country's most iconic dishes.",
+                c2Title: "Landmarks", c2Text: "From Machu Picchu to the Nazca Lines, Peru preserves unique treasures at every turn.",
+                c3Title: "Tradition", c3Text: "Peruvian festivals and traditions reflect the country's cultural wealth and diversity.",
+                videoTitle: "Explore Peru", videoText: "A journey through its culture, landscapes, and unique traditions.",
+            },
+        };
+
+        function getGreeting(lang) {
+            const hour = new Date().getHours();
+            let greeting;
+
+            if (lang === 'es') {
+                if (hour >= 6 && hour < 12) {
+                    greeting = "Buenos días";
+                } else if (hour >= 12 && hour < 18) {
+                    greeting = "Buenas tardes";
+                } else {
+                    greeting = "Buenas noches";
+                }
+                return `${greeting}, bienvenido a Conociendo Perú`;
+            } else { // lang === 'en'
+                if (hour >= 6 && hour < 12) {
+                    greeting = "Good morning";
+                } else if (hour >= 12 && hour < 18) {
+                    greeting = "Good afternoon";
+                } else {
+                    greeting = "Good evening";
+                }
+                return `${greeting}, welcome to Discover Peru`;
+            }
+        }
+
+        function cambiarIdioma(idioma) {
+            const t = textos[idioma];
+
+            // Actualiza contenido usando las clases del HTML
+            document.querySelector(".titulo").textContent = t.titulo;
+            document.querySelector(".nav-tradicion").textContent = t.navTrad;
+            document.querySelector(".nav-gastronomia").textContent = t.navGast;
+            document.querySelector(".nav-lugares").textContent = t.navLug;
+
+            document.querySelector(".header-title").textContent = t.headerTitle;
+            document.querySelector(".header-desc").textContent = t.headerDesc;
+            document.querySelector(".header-btn").textContent = t.headerBtn;
+
+            document.querySelector(".c1-title").textContent = t.c1Title;
+            document.querySelector(".c1-text").textContent = t.c1Text;
+            document.querySelector(".c2-title").textContent = t.c2Title;
+            document.querySelector(".c2-text").textContent = t.c2Text;
+            document.querySelector(".c3-title").textContent = t.c3Title;
+            document.querySelector(".c3-text").textContent = t.c3Text;
+
+            document.querySelector(".video-title").textContent = t.videoTitle;
+            document.querySelector(".video-text").textContent = t.videoText;
+            
+            // 3️⃣ MENSAJE DE BIENVENIDA DINÁMICO
+            const welcomeElement = document.querySelector(".welcome-message");
+            if (welcomeElement) {
+                welcomeElement.textContent = getGreeting(idioma);
+            }
+
+            // Actualiza persistencia y accesibilidad
+            localStorage.setItem("idioma", idioma);
+            btnIdioma.textContent = idioma === "es" ? "EN" : "ES";
+            document.documentElement.lang = idioma;
+        }
+
+        let idiomaActual = localStorage.getItem("idioma") || "es";
+        cambiarIdioma(idiomaActual);
+
+        btnIdioma.addEventListener("click", () => {
+            idiomaActual = idiomaActual === "es" ? "en" : "es";
+            cambiarIdioma(idiomaActual);
+        });
+
+
+        // --- 2. SLIDER DINÁMICO AUTOMÁTICO + MANUAL ---
+
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        const prevButton = document.querySelector(".carousel-btn.prev");
+        const nextButton = document.querySelector(".carousel-btn.next");
+        let currentIndex = 0;
+        let slideInterval; 
+
+        function updateCarousel() {
+            carouselItems.forEach((item, index) => {
+                if (index === currentIndex) {
+                    // Muestra el ítem actual
+                    item.style.display = 'flex'; 
+                    item.setAttribute('aria-current', 'true');
+                } else {
+                    // Oculta los demás ítems
+                    item.style.display = 'none';
+                    item.setAttribute('aria-current', 'false');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel();
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 4000); // Avanza cada 4 segundos
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        nextButton.addEventListener('click', () => {
+            stopAutoSlide(); 
+            nextSlide();
+            startAutoSlide(); // Reinicia
+        });
+
+        prevButton.addEventListener('click', () => {
+            stopAutoSlide(); 
+            prevSlide();
+            startAutoSlide(); // Reinicia
+        });
+
+        updateCarousel();
+        startAutoSlide(); // 👈 Inicia el movimiento automático al cargar
+
+
+        // --- 3. MENÚ DESPLEGABLE (HOVER/CLICK con JavaScript) ---
+
+        const menuParentItems = document.querySelectorAll('.navbar li'); 
+        const activeClass = 'active-dropdown'; 
+
+        menuParentItems.forEach(item => {
+            const submenu = item.querySelector('ul');
+            if (submenu) {
+                // Alterna con clic
+                item.addEventListener('click', (e) => {
+                    // Cierra otros submenús
+                    menuParentItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove(activeClass);
+                        }
+                    });
+                    item.classList.toggle(activeClass);
+                });
+
+                // Desplegar con hover
+                item.addEventListener('mouseenter', () => {
+                    item.classList.add(activeClass);
+                });
+
+                // Ocultar al salir del hover
+                item.addEventListener('mouseleave', () => {
+                    item.classList.remove(activeClass);
+                });
+            }
+        });
+
+        // Cierra el menú si se hace clic fuera del navbar
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                menuParentItems.forEach(item => {
+                    item.classList.remove(activeClass);
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
